@@ -1,7 +1,7 @@
 # API
-A API deve ficar uma pasta antes da raiz do projeto.
-Exemplo `gatitobook/gatitobook/src`
-        `/gatitobook/api`
+A API deve ficar uma pasta antes da raiz do projeto.</br>
+Exemplo <p>`gatitobook/gatitobook/src`
+        `/gatitobook/api`</p>
 executar `npm i` para a instalação dos pacotes.
 a API esta na `porta 3000` de localhost
 
