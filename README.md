@@ -1,3 +1,11 @@
+# API
+A API deve ficar uma pasta antes da raiz do projeto.
+Exemplo `gatitobook/gatitobook/src`
+        `/gatitobook/api`
+executar `npm i` para a instalação dos pacotes.
+a API esta na `porta 3000` de localhost
+
+
 # Gatitobook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.

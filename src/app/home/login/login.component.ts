@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AtenticacaoService } from 'src/app/autenticacao/atenticacao.service';
 
 @Component({
@@ -11,15 +12,14 @@ export class LoginComponent {
   usuario='';
   senha='';
 
-  constructor(private authService: AtenticacaoService){}
+  constructor(private authService: AtenticacaoService, private router: Router){}
 
   login(){
     
     this.authService.autenticar(this.usuario, this.senha).subscribe(()=>{
-      console.log('atenticado com sucesso',);},
-    (error)=>{
+      this.router.navigate(['animais']);
+    },(error)=>{
       console.error('Informação invallida', error);
-      
     });
   }
 
