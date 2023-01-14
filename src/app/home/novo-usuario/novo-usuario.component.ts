@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { minusculoValidator } from './minusculo.validator';
 import { NovoUsuario } from './novo-usuario';
 import { NovoUsuarioService } from './novo-usuario.service';
 
@@ -18,7 +19,7 @@ export class NovoUsuarioComponent {
     this.novoUsuarioForm = this.formBuilder.group({
       email:['',[Validators.required, Validators.email]],  //segundo elemento do array, que é outro array é para validações em formularios reativos
       fullName:['',[Validators.required, Validators.minLength(4)]],
-      userName:[''],
+      userName:['',[minusculoValidator]],
       password:['']
     });
   }
