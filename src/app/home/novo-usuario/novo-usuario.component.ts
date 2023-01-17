@@ -26,6 +26,5 @@ export class NovoUsuarioComponent {
   public cadastrar(){
     const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
     console.log(novoUsuario);
-    
   }
 }
