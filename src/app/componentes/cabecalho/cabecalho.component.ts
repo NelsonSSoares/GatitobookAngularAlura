@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
 
 @Component({
   selector: 'app-cabecalho',
   templateUrl: './cabecalho.component.html',
-  styleUrls: ['./cabecalho.component.css']
+  styleUrls: ['./cabecalho.component.css'],
 })
 export class CabecalhoComponent {
-  
-  public user$ = this.usuarioService.retornaUsuario();
+  user$ = this.usuarioService.retornaUsuario();
 
-  constructor(private usuarioService: UsuarioService, private router: Router){}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
-  public logOut(){
-    this.usuarioService.logOut();
+  logout() {
+    this.usuarioService.logout();
     this.router.navigate(['']);
   }
 }
