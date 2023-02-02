@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, switchMap } from 'rxjs';
 import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
 import { Animais } from '../animais';
 import { AnimaisService } from '../animais.service';
@@ -10,7 +11,7 @@ import { AnimaisService } from '../animais.service';
 })
 export class ListaAnimaisComponent {
 
-  animais!: Animais;
+  animais$!: Observable<Animais>;
   /*
     vamos declarar o atributo animais!:. Por que exclamação dois pontos? Porque eu vou instanciá-lo no ngOnInit. Como eu só estou declarando, tenho que colocar essa exclamação dois pontos, e ele vai ser do tipo Animais;.
   */
@@ -18,12 +19,11 @@ export class ListaAnimaisComponent {
   constructor(private usuarioService: UsuarioService, private animaisService: AnimaisService){}
 
   ngOnInit(): void{
-    this.usuarioService.retornaUsuario().subscribe((usuario)=>{
-      const userName = usuario.name ?? ''; // caso usuario.name for undefined or null o operador ?? ira inserir uma string vazia '';
-      this.animaisService.listaDoUsuario(userName).subscribe((animais)=>{
-        this.animais = animais;
-      });
-    })
+    this.animais$ = this.usuarioService.retornaUsuario().pipe(
+      switchMap((usuario)=>{
+        const userName = usuario.name ?? '';
+        return this.animaisService.listaDoUsuario(userName);
+      })
+    )
   }
-
 }
