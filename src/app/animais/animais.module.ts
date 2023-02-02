@@ -17,7 +17,7 @@ import { GradeFotosAnimaisComponent } from './grade-fotos-animais/grade-fotos-an
   imports: [
     CommonModule,
     AnimaisRoutingModule,
-    CartaoModule
+    CartaoModule,
   ]
 })
 export class AnimaisModule { }
