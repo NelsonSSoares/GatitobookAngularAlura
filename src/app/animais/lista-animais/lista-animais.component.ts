@@ -15,7 +15,6 @@ export class ListaAnimaisComponent {
   /*
     vamos declarar o atributo animais!:. Por que exclamação dois pontos? Porque eu vou instanciá-lo no ngOnInit. Como eu só estou declarando, tenho que colocar essa exclamação dois pontos, e ele vai ser do tipo Animais;.
   */
-
   constructor(private usuarioService: UsuarioService, private animaisService: AnimaisService){}
 
   ngOnInit(): void{
