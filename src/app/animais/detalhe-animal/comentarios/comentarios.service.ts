@@ -6,6 +6,7 @@ import { Comentario, Comentarios } from './comentarios';
 
 const API = environment.apiURL;
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,7 @@ export class ComentariosService {
   }
 
   public incluiComentario(id:number, comment: string): Observable<Comentario>{
-    return this.http.post<Comentario>(`${API}/photos/${id}/comments`, comment);
+    return this.http.post<Comentario>(`${API}/photos/${id}/comments`, {comment});
   }
 
 }

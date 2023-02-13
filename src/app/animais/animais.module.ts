@@ -8,6 +8,8 @@ import { CartaoModule } from '../componentes/cartao/cartao.module';
 import { GradeFotosAnimaisComponent } from './grade-fotos-animais/grade-fotos-animais.component';
 import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.component';
 import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.component';
+import { MensagemModule } from '../componentes/mensagem/mensagem.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.c
     CommonModule,
     AnimaisRoutingModule,
     CartaoModule,
+    MensagemModule,
+    ReactiveFormsModule
   ]
 })
 export class AnimaisModule { }
